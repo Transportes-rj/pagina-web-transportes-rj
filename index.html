@@ -30,7 +30,7 @@
   "@type":"MovingCompany",
   "name":"Transportes R&J",
   "url":"https://www.transportesrj.cl/",
-  "telephone":"+56949491956",
+  "telephone":"+56954666342",
   "description":"Servicios de mudanzas, transporte, embalaje, carga y descarga para casas, departamentos, oficinas y bodegas en Santiago y Regiones de Chile.",
   "foundingDate":"2021",
   "areaServed":[{"@type":"City","name":"Santiago"},{"@type":"Country","name":"Chile"}],
@@ -2227,6 +2227,22 @@ body{
 .reviews-card h3{margin:0 0 10px;color:#061f35}
 .reviews-card p{margin:0;color:#667b8b}
 .reviews-note{margin-top:18px;font-size:.9rem;color:#667b8b}
+.review-form{margin-top:24px;display:grid;gap:14px}
+.review-form label{font-size:.86rem;font-weight:800;color:#061f35}
+.review-form input,.review-form textarea,.review-form select{
+  width:100%;border:1px solid #d8e1e7;background:#fff;color:#172c3d;
+  border-radius:8px;padding:13px 14px;font:inherit;outline:none
+}
+.review-form textarea{min-height:130px;resize:vertical}
+.review-form input:focus,.review-form textarea:focus,.review-form select:focus{
+  border-color:#145f96;box-shadow:0 0 0 3px rgba(20,95,150,.08)
+}
+.review-form button{
+  border:0;border-radius:8px;padding:14px 18px;background:#061f35;color:#fff;
+  font:inherit;font-weight:850;cursor:pointer
+}
+.review-form button:hover{background:#0a3558}
+.review-helper{font-size:.82rem;color:#667b8b;margin-top:2px!important}
 .site-footer{background:#061f35;color:#dce6ed;padding:22px 0;text-align:center;font-size:.88rem;letter-spacing:.01em}
 .site-footer strong{color:#fff}
 @media(max-width:640px){.reviews-shell{padding:64px 0}.reviews-card{padding:26px}}
@@ -2327,9 +2343,34 @@ body{
 <p>Las experiencias reales de nuestros clientes ayudan a otras personas a conocer cómo trabajamos y a elegir su servicio con mayor confianza.</p>
 </div>
 <div class="reviews-card">
-<h3>Reseñas reales, siempre verificables.</h3>
-<p>Esta sección está preparada para incorporar opiniones reales de clientes. No publicamos testimonios inventados ni calificaciones que no correspondan a experiencias auténticas.</p>
-<p class="reviews-note">Cuando tengas las reseñas, podremos mostrarlas aquí y enlazarlas con tu presencia en Google.</p>
+<h3>¿Ya utilizaste nuestro servicio?</h3>
+<p>Cuéntanos cómo fue tu experiencia con Transportes R&amp;J. Tu opinión nos ayuda a seguir mejorando y a que otros clientes conozcan nuestro trabajo.</p>
+
+<form class="review-form" id="reviewForm">
+  <div>
+    <label for="reviewName">Tu nombre (opcional)</label>
+    <input id="reviewName" name="reviewName" type="text" maxlength="60" placeholder="Ej.: María">
+  </div>
+
+  <div>
+    <label for="reviewRating">Calificación</label>
+    <select id="reviewRating" name="reviewRating">
+      <option value="5">★★★★★ Excelente</option>
+      <option value="4">★★★★☆ Muy bueno</option>
+      <option value="3">★★★☆☆ Bueno</option>
+      <option value="2">★★☆☆☆ Regular</option>
+      <option value="1">★☆☆☆☆ Necesita mejorar</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="reviewText">Escribe tu reseña</label>
+    <textarea id="reviewText" name="reviewText" maxlength="800" required placeholder="Cuéntanos cómo fue tu experiencia..."></textarea>
+  </div>
+
+  <button type="submit">Enviar mi reseña</button>
+  <p class="review-helper">Al presionar enviar, se abrirá WhatsApp con tu reseña lista para enviarla a Transportes R&amp;J.</p>
+</form>
 </div>
 </div>
 </section>
@@ -2340,13 +2381,13 @@ body{
 <h2>Hablemos de tu mudanza.</h2>
 <p class="contact-lead">Estamos disponibles para ayudarte a organizar tu próximo traslado.</p>
 <div class="contact-actions">
-<a class="contact-action primary" href="https://wa.me/56949491956" rel="noopener" target="_blank">
+<a class="contact-action primary" href="https://wa.me/56954666342" rel="noopener" target="_blank">
 <span class="contact-action-icon">💬</span>
 <span><strong>WhatsApp</strong><small>Escríbenos directamente</small></span>
 </a>
-<a class="contact-action" href="tel:+56949491956">
+<a class="contact-action" href="tel:+56954666342">
 <span class="contact-action-icon">📞</span>
-<span><strong>Llámanos</strong><small>+56 9 4949 1956</small></span>
+<span><strong>Llámanos</strong><small>+56 9 5466 6342</small></span>
 </a>
 <a class="contact-action" href="https://cotizador.transportesrj.cl" rel="noopener" target="_blank">
 <span class="contact-action-icon">🧾</span>
@@ -2374,7 +2415,7 @@ body{
 </section>
 </main>
 <footer class="site-footer"><div class="container"><strong>Transportes R&amp;J</strong> · Mudanzas y Transporte · Santiago y Regiones<br/>© 2026 Transportes R&amp;J. Todos los derechos reservados.</div></footer>
-<a aria-label="WhatsApp" class="whatsapp-float" href="https://wa.me/56949491956" rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 3.2A12.5 12.5 0 0 0 5.2 22l-1.7 6.2 6.4-1.7A12.5 12.5 0 1 0 16 3.2Zm0 22.7c-2 0-3.9-.6-5.5-1.6l-.4-.2-3.8 1 1-3.7-.2-.4A10.2 10.2 0 1 1 16 25.9Zm5.6-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.7-4.2-3.8-.3-.5.3-.5.9-1.7.1-.2 0-.5 0-.7-.1-.2-.7-1.7-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z" fill="currentColor"></path></svg></a>
+<a aria-label="WhatsApp" class="whatsapp-float" href="https://wa.me/56954666342" rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 3.2A12.5 12.5 0 0 0 5.2 22l-1.7 6.2 6.4-1.7A12.5 12.5 0 1 0 16 3.2Zm0 22.7c-2 0-3.9-.6-5.5-1.6l-.4-.2-3.8 1 1-3.7-.2-.4A10.2 10.2 0 1 1 16 25.9Zm5.6-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.7-4.2-3.8-.3-.5.3-.5.9-1.7.1-.2 0-.5 0-.7-.1-.2-.7-1.7-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z" fill="currentColor"></path></svg></a>
 <script>
 (function(){
   const panels=[...document.querySelectorAll('[data-page]')];
@@ -2393,6 +2434,33 @@ body{
   if(btn&&menu) btn.addEventListener('click',()=>menu.classList.toggle('open'));
   const name=(location.hash||'#inicio').slice(1);
   show(['inicio','nosotros','servicios','trabajos','resenas','contacto'].includes(name)?name:'inicio',false);
+
+  const reviewForm=document.getElementById('reviewForm');
+  if(reviewForm){
+    reviewForm.addEventListener('submit',e=>{
+      e.preventDefault();
+      const customer=(document.getElementById('reviewName')?.value||'').trim();
+      const rating=document.getElementById('reviewRating')?.value||'5';
+      const review=(document.getElementById('reviewText')?.value||'').trim();
+      if(!review) return;
+
+      const stars='★'.repeat(Number(rating))+'☆'.repeat(5-Number(rating));
+      const message=
+        'Hola Transportes R&J, quiero dejar una reseña.\n\n'+
+        (customer ? 'Nombre: '+customer+'\n' : '')+
+        'Calificación: '+stars+'\n'+
+        'Reseña: '+review;
+
+      if(typeof gtag==='function'){
+        gtag('event','resena_whatsapp',{
+          event_category:'Reseñas',
+          event_label:'Enviar reseña por WhatsApp'
+        });
+      }
+
+      window.open('https://wa.me/56954666342?text='+encodeURIComponent(message),'_blank');
+    });
+  }
 })();
 </script>
 </body>
