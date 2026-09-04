@@ -2247,6 +2247,33 @@ body{
 .site-footer strong{color:#fff}
 @media(max-width:640px){.reviews-shell{padding:64px 0}.reviews-card{padding:26px}}
 </style>
+
+<style id="solo-cambios-solicitados-20260904">
+/* SOLO: título de Inicio en dos líneas y centrado */
+#inicio .hero-copy h1{ text-align:center !important; }
+#inicio .hero-copy h1 .inicio-titulo-1,
+#inicio .hero-copy h1 .inicio-titulo-2{ display:block !important; text-align:center !important; }
+
+/* SOLO: Atención directa centrada y sin el bloque azul en PC */
+@media (min-width:701px){
+  #contacto .contact-photo-overlay{
+    margin:auto !important;
+    text-align:center !important;
+    background:transparent !important;
+    box-shadow:none !important;
+  }
+  #contacto .contact-photo-overlay .kicker,
+  #contacto .contact-photo-overlay h3,
+  #contacto .contact-photo-overlay p{ text-align:center !important; }
+  #contacto .contact-photo-overlay .social-links{ justify-content:center !important; }
+}
+</style>
+
+<style id="solo-cambios-solicitados-20260904">
+#inicio h1,#inicio .inicio-titulo-1,#inicio .inicio-titulo-2{text-align:left!important;}
+#inicio .inicio-titulo-1,#inicio .inicio-titulo-2{display:block!important;}
+#reviewForm .hero-btn{border:0;cursor:pointer;}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -2270,7 +2297,7 @@ body{
 <div class="container hero-content">
 <div class="hero-copy">
 <div class="eyebrow">TRANSPORTES R&amp;J · MUDANZAS Y TRANSPORTE</div>
-<h1>Mudanzas desde Santiago<br/>a Regiones.</h1>
+<h1><span class="inicio-titulo-1">Mudanzas</span><span class="inicio-titulo-2">De Santiago a Regiones</span></h1>
 <p>Servicio de mudanzas, fletes y transporte para casas, departamentos, oficinas y bodegas. Cotiza rápido y sin compromiso.</p>
 <div class="hero-actions">
 <a class="hero-btn hero-btn-main" href="https://cotizador.transportesrj.cl" rel="noopener" target="_blank">Cotizar online</a>
@@ -2348,9 +2375,20 @@ body{
 <p>“Muy buen servicio, 100% recomendado, mis cosas llegaron en perfecto estado a mi nueva casita, quedé muy contenta con el servicio.”</p>
 </div>
 <div class="reviews-card">
-<h3>¿Necesitas una mudanza?</h3>
-<p>Solicita tu cotización online en pocos pasos. Atendemos mudanzas desde Santiago a Regiones.</p>
-<a class="hero-btn hero-btn-main" href="https://cotizador.transportesrj.cl" rel="noopener" target="_blank" style="margin-top:12px">Cotizar online</a>
+<h3>Deja tu reseña</h3>
+<form class="review-form" id="reviewForm">
+<label for="reviewName">Nombre</label>
+<input id="reviewName" name="nombre" type="text" required>
+<label for="reviewRating">Estrellas</label>
+<select id="reviewRating" name="estrellas" required>
+<option value="">Selecciona</option>
+<option value="5">★★★★★</option><option value="4">★★★★</option><option value="3">★★★</option><option value="2">★★</option><option value="1">★</option>
+</select>
+<label for="reviewText">Comentario</label>
+<textarea id="reviewText" name="comentario" placeholder="Escribe tu opinión o comentario" required></textarea>
+<button class="hero-btn hero-btn-main" type="submit">Enviar reseña</button>
+<p class="reviews-note" id="reviewStatus" aria-live="polite"></p>
+</form>
 </div></div></section>
 <section class="page-panel contact-page" data-page="contacto" id="contacto">
 <div class="container contact-grid contact-human">
@@ -2414,6 +2452,10 @@ body{
   show(['inicio','nosotros','servicios','trabajos','resenas','contacto'].includes(name)?name:'inicio',false);
 
 })();
+</script>
+
+<script id="review-form-local">
+document.addEventListener('DOMContentLoaded',function(){var f=document.getElementById('reviewForm');if(f){f.addEventListener('submit',function(e){e.preventDefault();var st=document.getElementById('reviewStatus');if(st)st.textContent='Gracias por compartir tu reseña.';f.reset();});}});
 </script>
 </body>
 </html>
